@@ -17,7 +17,6 @@
 
 export default {
   name: 'App',
-
 }
 
 </script>
@@ -73,8 +72,9 @@ export default {
 }
 
 #test {
-  color: var(--light-black);
+  color: var(--gray);
   font-style: italic;
+  
 }
 
 </style>
