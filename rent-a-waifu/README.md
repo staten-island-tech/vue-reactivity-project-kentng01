@@ -1,4 +1,4 @@
-# hello-world
+# rent-a-waifu
 
 ## Project setup
 ```
