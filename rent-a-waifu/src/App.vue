@@ -11,21 +11,24 @@
     <div class="product">
 
       <div class="product-info">
-        <h2 class="product-name">{{productName + " " +description}}  </h2>
+        <h2 class="product-name">{{productName + " " +description}}</h2>
       </div>
 
       <img :src="image" alt="" class="image">
 
-      <ul>Storyline
-        <li v-for="story in story" :key="story">{{story}}</li>
-      </ul>
+      <div class="story">Storyline
+        <h1 v-for="story in story" :key="story">{{story}}</h1>
+      </div>
 
       <div class="buttons">
         <button id="btn-waifu" v-on:click="addToCart">Add to Cart</button>
-      </div>  
+
       <div class="cart-container">
         <p class="cart">Cart({{cart}})</p>
         </div>
+
+      </div>  
+
         </div>
       </div>  
     
@@ -39,35 +42,37 @@ export default {
 
     data(){
       return{
-        productName:"Yanfei",
-        description: "is smol",
-        image: require("./assets/yanfei.png"),
-        story:["test", "testArray"],
+        productName:"Aether",
+        description: "",
+        image: require("./assets/aether.png"),
+        story:["test"],
         Products:[{
 
-          productName:"Amber",
-              description: "is best",
-              image: require("./assets/kokomi.png"),
+          productName:"Ayaka",
+              description: "",
+              image: require("./assets/inazuma/ayaka.png"),
               story:["no"],
               },{
 
-          productName:"Ayaka",
-              description: "is cool",
-              image: require("./assets/yanfei.png"),
+          productName:"Raiden Ei",
+              description: "",
+              image: require("./assets/inazuma/ei.png"),
               },{
 
-          productName:"Ei",
-              description: "is electircal",
-              image: require("./assets/yanfei.png"),
+          productName:"Kujou Sara",
+              description: "",
+              image: require("./assets/inazuma/kujou.png"),
               },{
 
           productName:"Kokomi",
-              description: "is wet",
-              image: require("./assets/kokomi.png"),
+              description: "",
+              image: require("./assets/inazuma/kokomi.png"),
 
               },
             ],
+
           cart:0
+
         }
     
   },
@@ -99,6 +104,10 @@ export default {
     height: 100vh;
     font-weight: 500;
   }
+
+
+/* app */
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -121,6 +130,11 @@ export default {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    font-weight: 300;
+    font-size: 3.5rem;
+    text-decoration: none;
+    text-align: center;
+    z-index: 2;
   }
 
   .buttons {
@@ -204,7 +218,8 @@ export default {
 
   .image{
     width: 25%;
-    height: fit-content;
+    height: 100%;
+
   }
 
   .cart{
