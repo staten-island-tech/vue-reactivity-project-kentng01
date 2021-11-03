@@ -19,7 +19,7 @@
         alt="" 
         class="img-waifu">
         <div class="buttons">
-          <button id="btn-waifu" v-on:click="addToCart">Add to Cart</button>
+          <button id="btn-waifu" v-on:click="addToCart" :click="updateTotal">Add to Cart</button>
           <div class="cart-container">
             <p class="cart">Cart({{cart}})</p>
             <p class="cartTotal">Total:${{total}}</p>
@@ -41,8 +41,7 @@ export default {
 
     data(){
       return{
-        total: 0,
-        price: 1,
+        price: 0,
         productName:"Aether",
         description: "",
         image: require("./assets/aether.png"),
@@ -76,7 +75,8 @@ export default {
               
             ],
 
-          cart:0
+          cart:0,
+          total: 0
 
         }
     
@@ -113,10 +113,6 @@ export default {
   list-style: none;
 }
 
-html {
-  background: linear-gradient(rgba(20, 4, 66, 0.4), rgba(20, 4, 66, 0.4)), url(./assets/backgrounds/cherryblossoms.jpg) no-repeat top ;
-}
-
 body {
   margin: 0;
   height: 100vh;
@@ -126,6 +122,8 @@ body {
   flex-direction: column;
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(rgba(20, 4, 66, 0.4), rgba(20, 4, 66, 0.4)), url(./assets/backgrounds/cherryblossoms.jpg) no-repeat;
+  background-size: cover;
 }
 
 /* app */
