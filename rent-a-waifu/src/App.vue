@@ -19,7 +19,7 @@
         alt="" 
         class="img-waifu">
         <div class="buttons">
-          <button id="btn-waifu" v-on:click="addToCart" :click="updateTotal">Add to Cart</button>
+          <button id="btn-waifu" v-on:click="addToCart">Add to Cart</button>
           <div class="cart-container">
             <p class="cart">Cart({{cart}})</p>
             <p class="cartTotal">Total:${{total}}</p>
@@ -41,10 +41,10 @@ export default {
 
     data(){
       return{
-        price: 0,
-        productName:"Aether",
+        price: 300,
+        productName:"Lumine",
         description: "",
-        image: require("./assets/aether.png"),
+        image: require("./assets/lumine.png"),
         story:["test"],
         Products:[{
 
@@ -71,7 +71,16 @@ export default {
               description: "",
               image: require("./assets/inazuma/kokomi.png"),
 
+              },{
+
+          productName:"Yanfei",
+              price: 300,
+              description: "",
+              image: require("./assets/liyue/yanfei.png"),
+
               },
+              
+            
               
             ],
 
@@ -85,15 +94,14 @@ export default {
   methods: {
     addToCart() {
       this.cart += 1
+      this.total += this.price
+      console.log(this.price);
     },
     updateProduct(image, productName, description, price ) {
       this.image = image
       this.productName = productName
       this.description = description
       this.price = price
-    },
-    updateTotal(){
-      this.total += this.price
     }
   }
 }
@@ -161,7 +169,7 @@ body {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 100%;
+    width: auto;
     font-weight: 300;
     font-size: 3.5rem;
     text-decoration: none;
@@ -187,7 +195,7 @@ body {
   }
 
   #btn-selections {
-    width: 12rem;
+    width: 11rem;
     height: 5rem;
     border: none;
     font-family: "Noto Sans JP", serif;
@@ -196,6 +204,7 @@ body {
     background: linear-gradient(rgba(20, 4, 66, 0.5), rgba(20, 4, 66, 0.5)), url(./assets/backgrounds/christmas.jpg) no-repeat bottom;
     color: #ffffff;
     margin-top: 1.5rem;
+    margin: 0.5rem;
     padding: 0.5rem 1.5rem;
     outline: none;
     font-size: 1.5rem;
@@ -252,7 +261,7 @@ body {
 /* images */
 
   .img-waifu{
-    width: 45%;
+    width: 50%;
     height: 100%;
     margin-top: -8rem;
     margin-bottom: 4rem;
@@ -269,18 +278,21 @@ body {
     margin-left: 12rem;
     margin-top: -1rem; 
     padding: .2rem;
+    background: linear-gradient(rgba(251, 249, 255, 0.7), rgba(251, 249, 255, 0.7)), url(./assets/backgrounds/halloween.jpg) no-repeat center;
   }
 
   .cartTotal {
     font-size: 2rem;
     background-color: #A1BFD9;
     border-radius: 0.5rem;
-    width: 10rem;
+    width: 13.1rem;
     height: 3.5rem;
     text-align: center;
     position: absolute;
     margin-top: -1rem;
+    margin-left: -3rem;
     padding: .2rem;
+    background: linear-gradient(rgba(251, 249, 255, 0.7), rgba(251, 249, 255, 0.7)), url(./assets/backgrounds/halloween.jpg) no-repeat center;
 }
 
 
